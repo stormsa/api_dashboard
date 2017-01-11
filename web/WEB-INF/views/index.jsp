@@ -9,5 +9,6 @@
 </head>
 <body>
     Hello world
+    <a href="/meteo">meteo</a>
 </body>
 </html>
