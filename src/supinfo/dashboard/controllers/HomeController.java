@@ -20,7 +20,7 @@ import java.util.List;
  * Manage agencies
  */
 @Controller
-@RequestMapping({"/index", "/", "agency"})
+@RequestMapping({"/index", "/", "/login"})
 public class HomeController {
     // Return index view
     @RequestMapping(method= RequestMethod.GET)
