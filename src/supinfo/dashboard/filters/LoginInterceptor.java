@@ -17,6 +17,7 @@ public class LoginInterceptor implements HandlerInterceptor{
         /* On Domain */
         if(!contextPath.equals("")){
             if(!request.getRequestURI().startsWith(contextPath+"/login") &&
+                    !request.getRequestURI().equals(contextPath+"/user/add") &&
                     !request.getRequestURI().startsWith(contextPath+"/meteo") &&
                     // Authorize user to access resources if not connected
                     !request.getRequestURI().startsWith(contextPath+"/resources")) {
@@ -32,6 +33,7 @@ public class LoginInterceptor implements HandlerInterceptor{
         // On localhost
         else{
             if(!request.getRequestURI().startsWith(contextPath+"/login") &&
+                    !request.getRequestURI().equals(contextPath+"/user/add") &&
                     !request.getRequestURI().startsWith(contextPath+"/meteo") &&
                     !request.getRequestURI().startsWith("/index") &&
                             // Authorize user to access resources if not connected
