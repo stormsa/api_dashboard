@@ -11,13 +11,16 @@
 <head>
     <title>meteo</title>
     <script src="<c:url value="/resources/js/jquery/jquery-2.2.3.min.js" />"></script>
-   <script type="application/javascript">
-       var url = ' https://newsapi.org/v1/sources?language=fr';
-       $.getJSON(url, function (json) {
-           alert(json);
+   <script>
+       $(window).ready(function(){
+           var url = ' https://newsapi.org/v1/sources?language=en';
+           $.getJSON(url, function (json) {
+               for(var i in json.sources){
+                   var info = json.sources[i];
+                    $(".liste_new").append("<div id=new_id"+info.id+" style='margin-bottom:20px;' >"+info.description+"</div>" )
+               }
 
-           /* json.coord.lon
-            json.coord.lat*/
+           });
        });
 
    </script>
@@ -25,7 +28,10 @@
 <body>
 
 <h1 class="titlearea win-type-ellipsis">
-    <span class="pagetitle">News Monde !</span>
+    <span class="pagetitle" >News Monde !</span>
 </h1>
+    <div class="liste_new">
+
+    </div>
 </body>
 </html>
