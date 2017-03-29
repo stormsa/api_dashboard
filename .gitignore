@@ -1,0 +1,4 @@
+.idea/
+!target/README.md
+target/
+**/.DS_Store
