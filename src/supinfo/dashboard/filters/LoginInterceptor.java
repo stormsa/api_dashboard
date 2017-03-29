@@ -37,7 +37,7 @@ public class LoginInterceptor implements HandlerInterceptor{
                     !request.getRequestURI().startsWith(contextPath+"/meteo") &&
                     !request.getRequestURI().startsWith("/index") &&
                             // Authorize user to access resources if not connected
-                            !request.getRequestURI().startsWith("/resources")) {
+                    !request.getRequestURI().startsWith("/resources")) {
                 LoginForm userData = (LoginForm) request.getSession().getAttribute("LOGGEDIN_USER");
                 // If invite trys index, let him in
                 if (userData == null) {
@@ -47,6 +47,7 @@ public class LoginInterceptor implements HandlerInterceptor{
             }
             return true;
         }
+
     }
 
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {

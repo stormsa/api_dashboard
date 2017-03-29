@@ -1,5 +1,7 @@
 package supinfo.dashboard.forms;
 
+import sun.misc.BASE64Encoder;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -28,7 +30,7 @@ public class LoginForm {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             md.update(clearPassword.getBytes());
-            return new sun.misc.BASE64Encoder().encode(md.digest());
+            return new BASE64Encoder().encode(md.digest());
         } catch (NoSuchAlgorithmException e) {
             //_log.error("Failed to encrypt password.", e);
         }
