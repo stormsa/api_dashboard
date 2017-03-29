@@ -11,6 +11,7 @@
 <head>
     <title>meteo</title>
     <script src="<c:url value="/resources/js/jquery/jquery-2.2.3.min.js" />"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="<c:url value="/resources/js/meteo.js" />"></script>
 </head>
 <body>
@@ -20,7 +21,7 @@
     </h1>
 
 <div class="search">
-    <select class="chosen" data-placeholder="Choisi votre ville" onchange="changeVille()">
+    <select class="chosen" id="dropdownCity" data-placeholder="Choisi votre ville" onchange="changeVille()">
         <option></option>
         <option value="Paris">Paris</option>
         <option value="Le Havre">Le Havre</option>
