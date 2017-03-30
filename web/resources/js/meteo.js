@@ -45,10 +45,12 @@ function successFunction(position) {
 
 function errorFunction(){
     alert("Geocoder failed");
+    initMeteo("Ile-de-France")
 }
 
 function codeLatLng(lat, lng) {
     var latlng = new google.maps.LatLng(lat, lng);
+    console.log(latlng);
     geocoder.geocode({'latLng': latlng}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             console.log(results)
@@ -71,7 +73,8 @@ function codeLatLng(lat, lng) {
                 $('#dropdownCity').append($('<option>', {
                     value: city.short_name,
                     text: city.short_name
-                })).val(city.short_name);
+                }));
+                $('#dropdownCity').val(city.short_name);
                 initMeteo(city.short_name);
 
             } else {
