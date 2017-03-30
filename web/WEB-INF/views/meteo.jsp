@@ -10,8 +10,6 @@
 <%@ page pageEncoding="UTF-8" %><html>
 <head>
     <title>meteo</title>
-    <script src="<c:url value="/resources/js/jquery/jquery-2.2.3.min.js" />"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="<c:url value="/resources/js/meteo.js" />"></script>
 </head>
 <body>

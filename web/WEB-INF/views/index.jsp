@@ -7,12 +7,11 @@
     <meta charset="utf-8" />
     <title>Accueil</title>
     <link rel="stylesheet" type="text/css" href="<spring:url value='/resources/css/Bootstrap/bootstrap.css'/>">
-    <link rel="stylesheet" type="text/css" href="<spring:url value='/resources/css/Bootstrap/bootstrap.min.css'/>" />
     <link rel="stylesheet" type="text/css" href="<spring:url value='/resources/font-awesome/css/font-awesome.min.css'/>" />
     <link rel="stylesheet" type="text/css" href="<spring:url value='/resources/css/local.css'/>" />
 
     <script type="text/javascript" src="<spring:url value='/resources/js/jquery/jquery-1.10.2.min.js'/>"></script>
-    <script type="text/javascript" src="<spring:url value='/resources/js/bootstrap/bootstrap.min.js'/>"></script>
+    <script type="text/javascript" src="<spring:url value='/resources/js/Bootstrap/bootstrap.js'/>"></script>
 
     <!-- you need to include the shieldui css and js assets in order for the charts to work -->
     <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
@@ -20,6 +19,8 @@
 
     <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
     <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script>
+    <script src="<c:url value="/resources/js/jquery/jquery-2.2.3.min.js" />"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
 <body>
     <!--Hello world
@@ -42,7 +43,7 @@
                     <li class="Ratp"><a href="#"><i class="fa fa-train"></i> RATP</a></li>
                     <li class="Meteo"><a href="#"><i class="fa fa-cloud"></i> Meteo</a></li>
                     <li class="News"><a href="#"><i class="fa fa-newspaper-o"></i> News</a></li>
-                    <li class="Uber"><a href="#"><i class="fa fa-car"></i> Uber</a></li>
+                    <li class="Uber"><a href="#"><i class="fa fa-car"></i> Autolib</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
@@ -93,11 +94,15 @@
             <div class="row">
                 <jsp:include page="news.jsp"/>
             </div>
+            <div class="row">
+                <jsp:include page="map.jsp"/>
+            </div>
         </div>
     </div>
     <!-- /#wrapper -->
     <script type="text/javascript">
         jQuery(function ($) {
+            /*
             var performance = [12, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
                     visits = [123, 323, 443, 32],
                     traffic = [
@@ -116,7 +121,6 @@
                         {
                             Source: "Internal", Amount: 111, Change: 78, Percent: 12, Target: 345
                         }];
-
 
             $("#shieldui-chart1").shieldChart({
                 theme: "dark",
@@ -167,7 +171,10 @@
                     { field: "Target", title: "Target" },
                 ]
             });
+
+        */
         });
+
     </script>
 </body>
 </html>
