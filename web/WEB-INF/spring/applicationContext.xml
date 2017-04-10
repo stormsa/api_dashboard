@@ -13,7 +13,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/dashboard?zeroDateTimeBehavior=convertToNull"/>
         <property name="username" value="root"/>
-        <property name="password" value=""/>
+        <property name="password" value="PYcqu6rzRL8ZFM8q"/>
         <property name="validationQuery" value="SELECT 1"/>
         <property name="testOnBorrow" value="true"/>
     </bean>
@@ -33,7 +33,6 @@
             </props>
         </property>
     </bean>
-
     <bean id="userDao" class="supinfo.dashboard.dao.UserDao">
         <property name="sessionFactory" ref="mySessionFactory"/>
     </bean>

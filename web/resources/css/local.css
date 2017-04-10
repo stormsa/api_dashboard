@@ -342,23 +342,7 @@ hr {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  line-height: 1.1;
-  color: #ffffff;
-}
+
 h1 small,
 h2 small,
 h3 small,
@@ -6130,7 +6114,7 @@ table.tablesorter thead tr th:hover {
             list-style: none;
             padding: 20px 0 20px;
             position: relative;
-        }
+ }
 
             .timeline:before {
                 top: 0;
@@ -6310,3 +6294,7 @@ table.tablesorter thead tr th:hover {
                     right: auto;
                 }
         }
+#map
+{width:800px;height:580px;margin:auto;
+}
+
