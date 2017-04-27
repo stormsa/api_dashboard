@@ -89,13 +89,17 @@
 
         <div id="page-wrapper">
             <div class="row">
-                <jsp:include page="meteo.jsp"/>
+                <div class="col-md-5 meteo">
+                    <jsp:include page="meteo.jsp"/>
+                </div>
+                <div class="col-xs-offset-1  col-md-5 news">
+                    <jsp:include page="news.jsp"/>
+                </div>
             </div>
             <div class="row">
-                <jsp:include page="news.jsp"/>
-            </div>
-            <div class="row">
-                <jsp:include page="map.jsp"/>
+                <div class="col-md-5 map">
+                    <jsp:include page="map.jsp"/>
+                </div>
             </div>
         </div>
     </div>
