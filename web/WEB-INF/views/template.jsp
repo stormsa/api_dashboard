@@ -34,7 +34,7 @@
 <body>
 <div class="wrapper">
         <c:if test="${sessionScope.USER_INFORMATIONS != null}">
-            <jsp:include page="../../../../api_dashboard-develop/web/WEB-INF/views/template/header.jsp"/>
+            <jsp:include page="template/header.jsp"/>
         </c:if>
     <!-- Page Content -->
     <div style="display: none" id="loading">
