@@ -14,12 +14,12 @@
 </head>
 <body>
 
-    <h1 class="titlearea win-type-ellipsis">
-        <span class="pagetitle">Meteo En France !</span>
-    </h1>
+<h1 class="titlearea win-type-ellipsis">
+    <span class="pagetitle">Meteo En France !</span>
+</h1>
 
-<div class="search">
-    <select class="chosen" id="dropdownCity" data-placeholder="Choisi votre ville" onchange="changeVille()">
+<div class="search" class="row">
+    <select class="chosen" data-placeholder="Choisi votre ville" onchange="changeVille()">
         <option></option>
         <option value="Paris">Paris</option>
         <option value="Le Havre">Le Havre</option>
@@ -35,16 +35,22 @@
         <option value="Rouen">Rouen</option>
     </select>
 </div>
-<div id="zone_meteo">
-    <span id="ville">Votre Ville</span><br />
-    <span id="temperature">Information</span>
-    <img id="image" />
-    <br />
-    <span id="humidite">Humidite</span><br />
-    <span id="vent">Vent</span>
-    <input type="hidden" id="long"/>
-    <input type="hidden" id="lat" />
-
+<div id="zone_meteo" class="row" >
+    <div class="col-md-6">
+        <span id="ville">Votre Ville</span>
+    </div>
+    <div class="col-md-6">
+        <span id="temperature">Information</span>
+        <img id="image" />
+    </div>
+    <div class="col-md-6">
+        <span id="humidite">Humidite</span><br />
+    </div>
+    <div class="col-md-6">
+        <span id="vent">Vent</span>
+        <input type="hidden" id="long"/>
+        <input type="hidden" id="lat" />
+    </div>
 </div>
 </body>
 </html>
