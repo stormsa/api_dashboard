@@ -14,8 +14,9 @@ services:
   - docker
 
 script:
-    - docker build --no-cache -f appbuilder.Dockerfile -t dashboard-builder 
-    - docker run --rm dashboard-builder
+    - docker build --no-cache -t dashboard .
+    - docker build --no-cache -f appbuilder.Dockerfile -t dashboard-builder
+    - docker run --rm dashboard-builder  
 
 # after_success:
 #   - >-
