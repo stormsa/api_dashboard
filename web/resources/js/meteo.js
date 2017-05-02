@@ -44,8 +44,8 @@ function successFunction(position) {
 }
 
 function errorFunction(){
-    alert("Geocoder failed");
-    initMeteo("Ile-de-France")
+    console.log("Geocoder failed");
+    initMeteo("Ile-de-France");
 }
 
 function codeLatLng(lat, lng) {
@@ -81,7 +81,8 @@ function codeLatLng(lat, lng) {
                 alert("No results found");
             }
         } else {
-            alert("Geocoder failed due to: " + status);
+            console.log("Geocoder failed due to: " + status);
+            initMeteo("Ile-de-France");
         }
     });
 }
