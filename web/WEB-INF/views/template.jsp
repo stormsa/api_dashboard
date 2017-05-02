@@ -25,17 +25,21 @@
 </head>
 <body>
 <div class="wrapper">
-        <c:if test="${sessionScope.USER_INFORMATIONS != null}">
+
+    <c:choose>
+        <c:when test="${sessionScope.USER_INFORMATIONS != null}">
             <jsp:include page="template/header.jsp"/>
             <div class="col-md-offset-2" id="page-wrapper">
                 <jsp:include page="${partial}"/>
             </div>
-        </c:if>
-        <c:if test="${sessionScope.USER_INFORMATIONS == null}">
+            <br />
+        </c:when>
+        <c:otherwise>
             <div id="page-wrapper">
                 <jsp:include page="${partial}"/>
             </div>
-        </c:if>
+        </c:otherwise>
+    </c:choose>
     <!-- Page Content -->
     <div style="display: none" id="loading">
         &nbsp;
