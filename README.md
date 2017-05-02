@@ -1,6 +1,26 @@
 # Dashme
 
-## How to run app
+Require
+
+* Docker engine (v1.13.0+)
+* docker-compose (v1.10.0+)
+
+## How to run stack
+
+* MYSQL (v8.0.0)
+* DASHME
+
+Run
+```
+docker-compose up
+```
+
+Destroy
+```
+docker-compose down
+```
+
+## How to run dashme app only
 
 Build
 ```
