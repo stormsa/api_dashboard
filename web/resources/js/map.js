@@ -41,12 +41,15 @@
             .done(function(data) {
                 $.each( data.records, function( i, record ) {
                     latlng = record.fields.xy;
-                    myLatLng = {lat: latlng[0], lng: latlng[1]};
-                    var marker = new google.maps.Marker({
-                        position: myLatLng,
-                        title:record.fields.id_autolib
-                    });
-                    marker.setMap(map);
+                    if(latlng != null){
+                        myLatLng = {lat: latlng[0], lng: latlng[1]};
+                        var marker = new google.maps.Marker({
+                            position: myLatLng,
+                            icon: "/resources/img/autolib.png",
+                            title:record.fields.id_autolib
+                        });
+                        marker.setMap(map);
+                    }
                 });
             })
             .fail(function() {

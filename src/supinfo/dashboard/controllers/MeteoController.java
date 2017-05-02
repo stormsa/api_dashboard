@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by Vinh on 11/01/2017.
  */
 @Controller
-@RequestMapping({"/meteo", "/meteo", "/meteo"})
+@RequestMapping({"/meteo"})
 public class MeteoController {
 
     @RequestMapping(method= RequestMethod.GET)
-    public String home(Model model){
+    public String meteo(Model model){
         return "meteo";
     }
 }

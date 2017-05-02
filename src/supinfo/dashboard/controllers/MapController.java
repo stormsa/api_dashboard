@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by saziri on 29/03/2017.
  */
 @Controller
-@RequestMapping({"/map", "/map"})
+@RequestMapping("/map")
 public class MapController {
         @RequestMapping(method= RequestMethod.GET)
-        public String home(Model model){
+        public String map(Model model){
             return "map";
         }
 }

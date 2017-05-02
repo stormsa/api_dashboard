@@ -1,4 +1,4 @@
-﻿/* Dark Admin Bootstrap Theme by PrepBootstrap - http://www.prepbootstrap.com */
+﻿﻿/* Dark Admin Bootstrap Theme by PrepBootstrap - http://www.prepbootstrap.com */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6326,7 +6326,7 @@ table.tablesorter thead tr th:hover {
   color: #ffffff;
 }
 
-#page-wrapper .row .meteo {
+#meteoDiv{
   /* padding-top: 10px; */
   border: 1px solid #012579;
   border-radius: 5px;
@@ -6335,9 +6335,10 @@ table.tablesorter thead tr th:hover {
   max-height: 200px;
 }
 
-#page-wrapper .row .search select {
+#meteoDiv .search select {
   display: block;
-  width: 100%;
+  width: 96%;
+  margin-left: 2%;
   height: 38px;
   padding: 8px 12px;
   font-size: 14px;
@@ -6352,26 +6353,25 @@ table.tablesorter thead tr th:hover {
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
+#meteoDiv{
+  padding: 10px;
+}
 
-
-
-#page-wrapper .row #zone_meteo {
+#zone_meteo {
   margin: 5px;
 }
-#page-wrapper .row #zone_meteo #ville,
-#page-wrapper .row #zone_meteo #temperature {
+#ville,#temperature {
   font-size: 20px;
   color: #fff;
 }
-#page-wrapper .row #zone_meteo #temperature {
+#temperature {
   font-weight: bold;
 }
-#page-wrapper .row #zone_meteo #humidite,
-#page-wrapper .row #zone_meteo #vent{
+#humidite, #vent{
   font-size: 16px;
 }
 
-#page-wrapper .row .news {
+.newsDiv {
   /* padding-top: 10px; */
   border: 1px solid #BC282D;
   border-radius: 5px;
@@ -6379,29 +6379,53 @@ table.tablesorter thead tr th:hover {
   min-height: 200px;
   max-height: 200px;
 }
-#page-wrapper .row .news .titlearea {
+.newsDiv .titlearea {
   color: black;
 }
 
-#page-wrapper .row .news .item {
+.newsDiv .item {
   /* display: block; */
   margin: 0 65px 0 85px;
   height: 100px;
 }
-#page-wrapper .row .news .item.active {
+.newsDiv .item.active {
   /* display: block; */
   margin: 0 65px 0 85px;
   height: 100px;
 }
-#page-wrapper .row .news .item .title {
+.newsDiv .item .title {
   font-size: 20px;
   text-decoration: underline;
 }
-#page-wrapper .row .news .item .desc,
-#page-wrapper .row .news .item .title{
+.newsDiv .item .desc, .newsDiv .item .title{
   display: none;
 }
-#page-wrapper .row .news .item.active .desc,
-#page-wrapper .row .news .item.active .title{
+.newsDiv .item.active .desc, .newsDiv .item.active .title{
   display: block;
+}
+#map{
+  height: 500px;
+  width: 1000px;
+
+}
+.titre{
+  color: black;
+  font-size: large;
+}
+#trafic{
+  margin-top: 50px;
+  overflow-y: scroll;
+  height: 400px;
+  background-color: white;
+}
+#ratp h3{
+  color: black;
+}
+#trafic > .list-group-item {
+  background-color: #aaaaaa;
+  color: black;
+}
+#horaires > .list-group-item {
+  background-color: #aaaaaa;
+  color: black;
 }

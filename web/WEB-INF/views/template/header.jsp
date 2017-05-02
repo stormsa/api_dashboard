@@ -10,17 +10,9 @@
     <link rel="stylesheet" type="text/css" href="<spring:url value='/resources/font-awesome/css/font-awesome.min.css'/>" />
     <link rel="stylesheet" type="text/css" href="<spring:url value='/resources/css/local.css'/>" />
 
-    <script type="text/javascript" src="<spring:url value='/resources/js/jquery/jquery-1.10.2.min.js'/>"></script>
-    <script type="text/javascript" src="<spring:url value='/resources/js/Bootstrap/bootstrap.js'/>"></script>
-
     <!-- you need to include the shieldui css and js assets in order for the charts to work -->
-    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
-    <link id="gridcss" rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/dark-bootstrap/all.min.css" />
-
-    <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
-    <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script>
-    <script src="<c:url value="/resources/js/jquery/jquery-2.2.3.min.js" />"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <link rel="stylesheet" type="text/css" href="<spring:url value='/resources/css/shieldUi.min.css'/>">
+    <link id="gridcss" rel="stylesheet" type="text/css" href="<spring:url value='/resources/css/shieldDark.min.css'/>">
 </head>
 <body>
 <!--Hello world
@@ -35,15 +27,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Dashboard Panel</a>
+            <a class="navbar-brand" href="<c:url value='/index/'/>">Dashboard Panel</a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul id="active" class="nav navbar-nav side-nav menu">
-                <li class="Accueil selected"><a href="index.html"><i class="fa fa-home"></i> Dashboard</a></li>
-                <li class="Ratp"><a href="<c:url value='/ratp/'/>"><i class="fa fa-train"></i> RATP</a></li>
-                <li class="Meteo"><a href="<c:url value='/meteo/'/>"><i class="fa fa-cloud"></i> Meteo</a></li>
-                <li class="News"><a href="#"><i class="fa fa-newspaper-o"></i> News</a></li>
-                <li class="Uber"><a href="#"><i class="fa fa-car"></i> Autolib</a></li>
+                <li class="Accueil selected"><a href="<c:url value='/index'/>"><i class="fa fa-home"></i> Dashboard</a></li>
+                <li class="Ratp"><a href="<c:url value='/ratp'/>"><i class="fa fa-train"></i> RATP</a></li>
+                <li class="Meteo"><a href="<c:url value='/meteo'/>"><i class="fa fa-cloud"></i> Meteo</a></li>
+                <li class="News"><a href="<c:url value='/news'/>"><i class="fa fa-newspaper-o"></i> News</a></li>
+                <li class="Uber"><a href="<c:url value='/map'/>"><i class="fa fa-car"></i> Autolib</a></li>
                 <li class="News"><a href="#"><i class="fa fa-file-movie-o"></i> Cinema</a></li>
 
             </ul>
@@ -72,10 +64,10 @@
                 <li class="dropdown user-dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <c:out value="${sessionScope.USER_INFORMATIONS.firstName}"/> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
-                        <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
+                        <li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
+                        <li><a href="#"><i class="fa fa-gear"></i> Paramètres</a></li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                        <li><a href="<c:url value='/login/logOff'/>"><i class="fa fa-power-off"></i> Déconnexion</a></li>
 
                     </ul>
                 </li>
@@ -88,3 +80,4 @@
             </ul>
         </div>
     </nav>
+</div>
