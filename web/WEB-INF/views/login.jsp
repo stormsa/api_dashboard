@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -32,7 +33,7 @@
         <div class="form-signin" data-ember-action="2">
             <div class="panel-heading">
                 <div class="panel-title text-center">
-                    <h1 class="title">Dashboard</h1>
+                    <h1 class="title">Dashme</h1>
                     <hr />
                 </div>
             </div>
@@ -64,6 +65,14 @@
             <br>
             <small class="create-account text-muted">Vous n'avez pas de compte chez nous ni de fb / google
                 <a href="<spring:url value='/user/add'/>"> Inscrivez-vous ! </a> </small>
+        </div>
+    </div>
+</div>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="connectModal" id="connectModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <h1>Chargement</h1>
+            <img src="<c:url value='/resources/img/ellipsis.svg'/>"/>
         </div>
     </div>
 </div>

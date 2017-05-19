@@ -13,6 +13,11 @@
     <!-- you need to include the shieldui css and js assets in order for the charts to work -->
     <link rel="stylesheet" type="text/css" href="<spring:url value='/resources/css/shieldUi.min.css'/>">
     <link id="gridcss" rel="stylesheet" type="text/css" href="<spring:url value='/resources/css/shieldDark.min.css'/>">
+
+    <!-- Bootstrap toggle -->
+    <link rel="stylesheet" type="text/css" href="<spring:url value='/resources/css/Bootstrap/bootstrap-toggle.min.css'/>">
+    <script type="text/javascript" src="<spring:url value='/resources/js/Bootstrap/bootstrap-toggle.min.js'/>"></script>
+
 </head>
 <body>
 <!--Hello world
@@ -27,16 +32,35 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<c:url value='/index/'/>">Dashboard Panel</a>
+            <a class="navbar-brand" href="<c:url value='/index'/>">Dashboard Panel</a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul id="active" class="nav navbar-nav side-nav menu">
                 <li class="Accueil selected"><a href="<c:url value='/index'/>"><i class="fa fa-home"></i> Dashboard</a></li>
-                <li class="Ratp"><a href="<c:url value='/ratp'/>"><i class="fa fa-train"></i> RATP</a></li>
+                <li class="Ratp">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse1"><i class="fa fa-train"></i> Transports</a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><a href="<c:url value='/ratp'/>"><i class="fa fa-train"></i> Horaires (RATP)</a></li>
+                                    <li class="list-group-item"><a href="<c:url value='/ratp/itinerary'/>"><i class="fa fa-train"></i> Itinéraire (map)</a></li>
+                                    <li class="list-group-item"><a href="#"><i class="fa fa-warning"></i> Info trafic</a></li>
+                                    <li class="list-group-item"><a href="#"><i class="fa fa-star"></i> Trajets favoris</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
                 <li class="Meteo"><a href="<c:url value='/meteo'/>"><i class="fa fa-cloud"></i> Meteo</a></li>
                 <li class="News"><a href="<c:url value='/news'/>"><i class="fa fa-newspaper-o"></i> News</a></li>
                 <li class="Uber"><a href="<c:url value='/map'/>"><i class="fa fa-car"></i> Autolib</a></li>
-                <li class="News"><a href="#"><i class="fa fa-file-movie-o"></i> Cinema</a></li>
+                <li class="News"><a href="<c:url value='/cinema'/>"><i class="fa fa-file-movie-o"></i> Cinema</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right navbar-user">

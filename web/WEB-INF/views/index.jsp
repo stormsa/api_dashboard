@@ -18,6 +18,5 @@
                 </div>
     <!-- /#wrapper -->
 </body>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script src="<c:url value="/resources/js/meteo.js" />"></script>
 </html>

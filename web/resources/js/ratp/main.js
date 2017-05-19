@@ -45,10 +45,7 @@ function getLines(){
                 station = metro.name;
                 direction = metro.directions;
                 code = metro.code;
-                $('#metro').append($('<option>', {
-                    value: code,
-                    text: station + " : "+direction
-                }));
+                $('#metro').append("<label class='radio-inline'><input type='radio' name='metro'><img src='/resources/img/ratp/metro/metro_"+code+".png'></label>");
             });
         })
         .fail(function() {
@@ -69,7 +66,7 @@ function getTrafic() {
             $.each( data.result.metros, function( i, line ) {
                 lineNumber = line.line;
                 trafic = line.message;
-                $('#trafic').append("<li class='list-group-item'>"+lineNumber+" : "+trafic+"</li>");
+                $('#trafic').append("<li class='list-group-item'><img src='/resources/img/ratp/metro/metro_"+lineNumber.toLowerCase()+".png'> : "+trafic+"</li>");
             });
         })
         .fail(function() {
@@ -147,8 +144,8 @@ function getDestination(code) {
 
 }
 
-$('#metro').on('change', function () {
-    code = this.value;
+$("input[type=radio][name=metro]").on('change', function () {
+    code = $("input[type=radio]:checked").val();
     $('#stations').html("");
     $('#destinations').html("");
     getStations(code);
