@@ -29,10 +29,22 @@
     <c:choose>
         <c:when test="${sessionScope.USER_INFORMATIONS != null}">
             <jsp:include page="template/header.jsp"/>
-            <div class="col-md-offset-2" id="page-wrapper">
+            <div class="col-md-offset-2 col-md-10" id="page-wrapper">
+                <!-- If page is a configuration api, so if it's not index
+                    display enable / disable api -->
+                <c:if test="${requestScope['javax.servlet.forward.request_uri'] != '/index'}">
+                    <div class="row">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked data-toggle="toggle" data-on="Activer" data-off="Désactiver" data-onstyle="primary" data-offstyle="danger">
+                                Activer / Desactiver l'api sur le dashboard
+                            </label>
+                        </div>
+                    </div>
+                </c:if>
+
                 <jsp:include page="${partial}"/>
             </div>
-            <br />
         </c:when>
         <c:otherwise>
             <div id="page-wrapper">
@@ -41,11 +53,14 @@
         </c:otherwise>
     </c:choose>
     <!-- Page Content -->
-    <div style="display: none" id="loading">
-        &nbsp;
-        <h1>Chargement</h1>
-        <img src="<c:url value='/resources/img/ellipsis.svg'/>"/>
+    <div class="loading">
+        <h4>Chargement</h4>
+        <div class="loader">
+
+        </div>
     </div>
+    <div id="loader" style="display: none"></div>
+
 
 </div>
 <div class="content"></div>
@@ -54,7 +69,41 @@
     function getUrl(path) {
         return '<spring:url value="/" />' + path;
     }
-    window.res_emoticons = getUrl("resources/SCE/emoticons/");
+    /*
+    $('#toggleApi').change(function() {
+            // Send state of api for this user to the server
+            var url =  +"/toggle";
+            toggleApi(url, $(this).prop('checked'));
+    })
+    */
+    function toggleApi(url, checked) {
+        var url = '<spring:url value="/manage/editeur/publish"/>';
+        var data = {'enabled': checked};
+        $.ajax({
+            cache: false,
+            url: url,
+            type: "POST",
+            data: data,
+            beforeSend: function (xhr) {
+
+            },
+            success: function (data, textStatus, jqXHR) {
+                if(checked){
+                    console.log("Api validé!");
+                }else{
+                    console.log("Api désactivée!");
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(thrownError);
+            }
+        });
+    }
+
+</script>
+<script>
+
 </script>
 </body>
 </html>

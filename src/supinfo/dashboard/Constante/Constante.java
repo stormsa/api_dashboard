@@ -11,4 +11,7 @@ public interface Constante {
     String FILE_PATH = HARD_DRIVE+"/Dashboard/Resources/";
     String LOG_PATH = FILE_PATH+"logs/";
     String IMG_PATH = FILE_PATH+"IMG/";
+    String RATP_FILE = "ratp.properties";
+    String METEO_FILE = "weather.propertie";
+    String USER_FILE = "user.properties";
 }

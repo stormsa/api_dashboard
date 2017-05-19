@@ -1,0 +1,31 @@
+.cinema img{
+    height:200px;
+    width: 150px;
+}
+
+.cinema ul{
+    list-style: none;
+}
+.cinema li{
+    display: inline-block;
+    background-color: white;
+    margin: 10px;
+    height: 400px;
+    width: 400px;
+}
+
+.cinema .item-total{
+    display: flex;
+    height:100%;
+}
+.cinema .title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cinema .item-info{
+    padding:10px;
+    overflow: hidden;
+}
+
+

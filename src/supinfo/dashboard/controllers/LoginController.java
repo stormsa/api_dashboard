@@ -48,11 +48,9 @@ public class LoginController {
             if( user != null ){
                 request.getSession().setAttribute("LOGGEDIN_USER", loginForm);
                 request.getSession().setAttribute("USER_INFORMATIONS", user);
-                param.remove("error");
                 return "redirect:/index";
             }else{
                 model.addAttribute("loginAttribute", loginForm);
-                param.put("error", "error");
                 return "redirect:/login";
             }
         }else{
@@ -65,7 +63,6 @@ public class LoginController {
         HttpSession session = request.getSession();
         session.removeAttribute("LOGGEDIN_USER");
         session.removeAttribute("USER_INFORMATIONS");
-        param.put("logout", "success");
         return "redirect:/login";
     }
     @RequestMapping(value = "/social_network", method = RequestMethod.GET)
@@ -119,7 +116,7 @@ public class LoginController {
                 return "redirect:/index";
             }
         }
-        return "redirect:/login.failed";
+        return "redirect:/login";
     }
 
 }

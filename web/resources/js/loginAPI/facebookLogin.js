@@ -70,6 +70,8 @@ $(function () {
     checkFbHashLogin();
 
     $('#fbLogin, #fbLogin2').click(function () {
+        document.getElementById("loader").style.display = "block";
         fbLogin();
+        document.getElementById("loader").style.display = "none";
     });
 })
