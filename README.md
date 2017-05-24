@@ -38,4 +38,3 @@ Destroy
 ```
 docker rm dashme
 ```
-
