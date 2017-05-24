@@ -25,9 +25,14 @@ after_success:
      docker build --no-cache -f appbuilder.Dockerfile -t dashme-builder;
      docker run --rm -v ${PWD}/target:/usr/src/dashboard/target/ dashme-builder;
      docker build --no-cache -t ${REGISTRY}/dashme .;
-     docker push ${REGISTRY}/dashme
+     docker push ${REGISTRY}/dashme;
      fi
-#   - >-
-#     if [ "$TRAVIS_BRANCH" == "develop" ]; then
-#     fi
+   - >-
+     if [ "$TRAVIS_BRANCH" == "develop" ]; then
+     docker login -u="$DOCKER_USER" -p="$DOCKER_PWD" $DOCKER_REGISTRY;
+     docker build --no-cache -f appbuilder.Dockerfile -t dashme-builder;
+     docker run --rm -v ${PWD}/target:/usr/src/dashboard/target/ dashme-builder;
+     docker build --no-cache -t ${REGISTRY}/dashme:dev .;
+     docker push ${REGISTRY}/dashme:dev;
+     fi
 
