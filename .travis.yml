@@ -20,7 +20,7 @@ script:
 after_success:
    - >-
      if [ "$TRAVIS_BRANCH" == "master" ]; then
-     docker login -u="$DOCKER_USER" -p="$DOCKER_PWD" $DOCKER_DOCKER_REGISTRY;
+     docker login -u="$DOCKER_USER" -p="$DOCKER_PWD" $DOCKER_REGISTRY;
      docker build --no-cache -f appbuilder.Dockerfile -t dashme-builder .;
      docker run --rm -v ${PWD}/target:/usr/src/dashboard/target/ dashme-builder;
      docker build --no-cache -t ${DOCKER_REGISTRY}/dashme .;
@@ -28,7 +28,7 @@ after_success:
      fi
    - >-
      if [ "$TRAVIS_BRANCH" == "develop" ]; then
-     docker login -u="$DOCKER_USER" -p="$DOCKER_PWD" $DOCKER_DOCKER_REGISTRY;
+     docker login -u="$DOCKER_USER" -p="$DOCKER_PWD" $DOCKER_REGISTRY;
      docker build --no-cache -f appbuilder.Dockerfile -t dashme-builder .;
      docker run --rm -v ${PWD}/target:/usr/src/dashboard/target/ dashme-builder;
      docker build --no-cache -t ${DOCKER_REGISTRY}/dashme:dev .;
