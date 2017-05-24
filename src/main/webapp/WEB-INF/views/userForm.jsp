@@ -37,6 +37,7 @@
             </div>
         </div>
         <div class="main-login main-center">
+
 <form:form method="POST" action="/user/add" id="subscribeForm" cssClass="form-horizontal"
            data-toggle="validator" modelAttribute="userAccount">
                 <div class="form-group">
