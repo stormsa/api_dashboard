@@ -14,7 +14,7 @@ services:
   - docker
 
 script:
-    - docker build --no-cache -f appbuilder.Dockerfile -t dashme-builder
+    - docker build --no-cache -f appbuilder.Dockerfile -t dashme-builder .
     - docker run --rm dashme-builder  
     - docker build --no-cache -t dashme .
 
