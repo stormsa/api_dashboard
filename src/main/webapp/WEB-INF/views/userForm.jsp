@@ -32,11 +32,12 @@
     <div class="row">
         <div class="panel-heading">
             <div class="panel-title text-center">
-                <h1 class="title">Sup NotePad</h1>
+                <h1 class="title">Dashme</h1>
                 <hr />
             </div>
         </div>
         <div class="main-login main-center">
+
 <form:form method="POST" action="/user/add" id="subscribeForm" cssClass="form-horizontal"
            data-toggle="validator" modelAttribute="userAccount">
                 <div class="form-group">
