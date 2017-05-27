@@ -7,3 +7,4 @@ out/
 lib/
 !/main/webapp/WEB-INF/database.properties
 /src/api-dashboard.iml
+/api-dashboard.iml

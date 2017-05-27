@@ -52,6 +52,12 @@ public class UserController {
         request.getSession().setAttribute("USER_INFORMATIONS", user);
         return "redirect:/index";
     }
+    @RequestMapping(value="/profil", method=RequestMethod.GET)
+    public ModelAndView edit(HttpServletRequest request){
+        user = (UserAccount) request.getSession().getAttribute("USER_INFORMATIONS");
+        return new ModelAndView("profil", "userAccount", user);
+    }
+
     private void createParameters(){
         String userHome = System.getProperty("user.home");
         // Create folder into user.home
