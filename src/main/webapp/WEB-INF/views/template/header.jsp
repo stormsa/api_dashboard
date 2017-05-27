@@ -88,7 +88,7 @@
                 <li class="dropdown user-dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <c:out value="${sessionScope.USER_INFORMATIONS.firstName}"/> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
+                        <li><a href="<c:url value='/user/profil'/>"><i class="fa fa-user"></i> Profil</a></li>
                         <li><a href="#"><i class="fa fa-gear"></i> Paramètres</a></li>
                         <li class="divider"></li>
                         <li><a href="<c:url value='/login/logOff'/>"><i class="fa fa-power-off"></i> Déconnexion</a></li>

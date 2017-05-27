@@ -48,7 +48,8 @@
             <div class="col-md-offset-2 col-md-10" id="page-wrapper">
                 <!-- If page is a configuration api, so if it's not index
                     display enable / disable api -->
-                <c:if test="${requestScope['javax.servlet.forward.request_uri'] != '/index'}">
+                <c:set value="${requestScope['javax.servlet.forward.request_uri']}" var="url"></c:set>
+                <c:if test="${url != '/index' && url != '/user/profil'}">
                     <div class="row">
                         <div class="checkbox">
                             <label>
