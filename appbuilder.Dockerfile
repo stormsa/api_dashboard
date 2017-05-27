@@ -4,4 +4,4 @@ MAINTAINER Clement le corre <clement@le-corre.eu>
 COPY . /usr/src/dashboard
 WORKDIR /usr/src/dashboard
 ENTRYPOINT ["mvn"]
-CMD ["war:war"]
+CMD ["compile","war:war"]
