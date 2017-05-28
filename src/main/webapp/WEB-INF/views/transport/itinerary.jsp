@@ -43,4 +43,4 @@
     </div>
 </div>
 <script src="<c:url value="/resources/js/map.js"/>"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDVE-a7qau15SVe4swWTo6VLNc4qqDq4ME&sensor=false&libraries=places&callback=initMap"></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDVE-a7qau15SVe4swWTo6VLNc4qqDq4ME&sensor=false&libraries=places&callback=initMap"></script>

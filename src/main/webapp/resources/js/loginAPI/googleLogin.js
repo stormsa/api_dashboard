@@ -1,5 +1,5 @@
 /**
- * Created by mikael on 21/03/16.
+ * Created by saziri on 21/03/16.
  */
 var clientId = '1087559998467-n83tf992vc407l63r8g6k0n22fdfefeu.apps.googleusercontent.com';
 var apiKey = 'SHRz65hc3HVweWVZkXZNlN_O';
