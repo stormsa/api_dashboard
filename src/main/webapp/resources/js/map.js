@@ -1,9 +1,8 @@
-var map;
-var panel;
 var initialize;
 var directionsService;
 var calculate;
-var direction;
+var mainDirection;
+var panel;
 var compt = 0;
 var depart, transit, arrivee, nom;
 function initMap(){
@@ -16,8 +15,8 @@ function initMap(){
     };
 
     directionsService = new google.maps.DirectionsService();
-    map = new google.maps.Map(document.getElementById('map'), myOptions);
-    direction = new google.maps.DirectionsRenderer({
+    var map = new google.maps.Map(document.getElementById('map'), myOptions);
+    mainDirection = new google.maps.DirectionsRenderer({
         map   : map,
         panel : panel
     });
@@ -28,14 +27,50 @@ function initMap(){
             map.setCenter(initialLocation);
         });
     }
+    else{
+        map.setCenter(latLng);
+    }
     initAutocomplete();
+}
+function initMapFav() {
+    var direction = initMapWithParam('map');
+    getDirection(direction,'fav1Departure', 'fav1Arrival', "map-panel");
+    var direction2 = initMapWithParam('map2');
+    getDirection(direction2,'fav2Departure', 'fav2Arrival', "map-panel2");
+}
+function initMapWithParam(mapInput){
+    var latLng = new google.maps.LatLng(48.866667, 2.333333); // Correspond au coordonnées de Paris
+    var myOptions = {
+        zoom: 12, // Zoom par défaut
+        center: latLng, // Coordonnées de départ de la carte de type latLng
+        mapTypeId: google.maps.MapTypeId.TERRAIN, // Type de carte, différentes valeurs possible HYBRID, ROADMAP, SATELLITE, TERRAIN
+        maxZoom: 20
+    };
+
+    directionsService = new google.maps.DirectionsService();
+    var map = new google.maps.Map(document.getElementById(mapInput), myOptions);
+    var direction = new google.maps.DirectionsRenderer({
+        map   : map,
+        panel : panel
+    });
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            map.setCenter(initialLocation);
+        });
+    }
+    else{
+        map.setCenter(latLng);
+    }
+    return direction;
 }
 
 var markers = [];
 
-function getDirection(){
-    var start = document.getElementById('departure').value;
-    var end = document.getElementById('arrival').value;
+function getDirection(direction,depart, arrivee, mapPanel){
+    var start = document.getElementById(depart).value;
+    var end = document.getElementById(arrivee).value;
     var request = {
         origin: start,
         destination: end,
@@ -46,10 +81,10 @@ function getDirection(){
             direction.setDirections(result);
         }
     });
-    direction.setPanel(document.getElementById("map-panel"));
+    direction.setPanel(document.getElementById(mapPanel));
 }
  $("#calcIti").click(function () {
-     getDirection();
+     getDirection(mainDirection,'departure', 'arrival', "map-panel");
  });
 
  var placeSearch, autoDeparture, autoArrival;

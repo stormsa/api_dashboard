@@ -27,6 +27,10 @@ public class RatpController {
     public String trafic(HttpServletRequest request, HttpServletResponse response){
         return "transport/trafic";
     }
+    @RequestMapping(value = "/favorites", method= RequestMethod.GET)
+    public String favorites(HttpServletRequest request, HttpServletResponse response){
+        return "transport/favorites";
+    }
     @RequestMapping("/toggle")
     public void toggle(HttpServletRequest request, HttpServletResponse response){
         boolean publish = Boolean.parseBoolean(request.getParameter("enabled"));

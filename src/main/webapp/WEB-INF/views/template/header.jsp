@@ -50,7 +50,7 @@
                                     <li class="list-group-item"><a href="<c:url value='/ratp'/>"><i class="fa fa-train"></i> Horaires (RATP)</a></li>
                                     <li class="list-group-item"><a href="<c:url value='/ratp/itinerary'/>"><i class="fa fa-train"></i> Itinéraire (map)</a></li>
                                     <li class="list-group-item"><a href="<c:url value='/ratp/traffic'/>"><i class="fa fa-warning"></i> Info trafic</a></li>
-                                    <li class="list-group-item"><a href="#"><i class="fa fa-star"></i> Trajets favoris</a></li>
+                                    <li class="list-group-item"><a href="<c:url value='/ratp/favorites'/>"><i class="fa fa-star"></i> Trajets favoris</a></li>
                                 </ul>
                             </div>
                         </div>
