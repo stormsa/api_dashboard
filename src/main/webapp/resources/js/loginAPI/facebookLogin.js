@@ -1,7 +1,7 @@
 /**
- * Created by mikael on 21/03/16.
+ * Created by saziri on 21/03/16.
  */
-var appID = '658105077679811';
+var appID = '114009762514384';
 
 function fbLogin() {
     var path = 'https://www.facebook.com/dialog/oauth?';
