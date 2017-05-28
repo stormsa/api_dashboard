@@ -2107,7 +2107,7 @@ table.tablesorter thead tr th:hover {
     border-radius: 0;
     /*border: none;*/
     border-right: 1px solid #bdbdbd;
-    /*background-color: #222222;*/
+    background-color: #FFF;
     overflow-y: auto;
   }
 
