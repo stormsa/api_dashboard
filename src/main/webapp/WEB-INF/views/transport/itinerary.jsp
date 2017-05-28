@@ -31,8 +31,8 @@
 <div class="row">
     <div class="col-sm-5">
         <br/>
-        <div id="itinerary">
-            <div id="map">
+        <div class="itinerary">
+            <div id="map" class="map">
                 <p>Veuillez patienter pendant le chargement de la carte...</p>
             </div>
         </div>

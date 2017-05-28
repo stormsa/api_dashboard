@@ -2510,8 +2510,13 @@ table.tablesorter thead tr th:hover {
   height: 500px;
   width: 1000px;
 }
-#itinerary #map{
+.itinerary .map{
   width: 500px;
+  height: 500px;
+}
+.itinerary #map{
+  width: 500px;
+  height: 500px;
 }
 .titre{
   color: black;
@@ -2600,4 +2605,11 @@ table.tablesorter thead tr th:hover {
 #horaires .time{
   color: green;
   font-weight: bold;
+}
+
+#favorites .item {border: 1px solid #ccc; padding: 15px; margin-bottom: 10px; background: #eee; }
+#favorites .item .itemAdresse {font-size: 16px; font-weight: bold; }
+#favorites .item .itemSubAdresse {color: #777; }
+#favorites .panel-heading{
+  height: 60px;
 }
