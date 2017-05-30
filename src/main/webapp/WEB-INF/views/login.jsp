@@ -42,29 +42,39 @@
             <br><br>
 
 
-            <p>
-                <button class="btn btn-primary social-login-btn social-facebook" type="subtmit" onclick="" value="Facebook login" id="fbLogin" class="login"><i class="fa fa-facebook"></i></button>
-            </p>
-            <p>
-                <button class="btn btn-primary social-login-btn social-google" type="subtmit" onclick="" value="Google login" id="googlelogin" class="login"><i class="fa fa-google-plus"></i></button>
-            </p>
+            <div class="row">
+                <div class="column">
+                    <div class="form-group col-md-offset-3 col-md-3">
+                        <button class="btn btn-primary social-login-btn social-facebook" type="subtmit" onclick="" value="Facebook login" id="fbLogin" class="login"><i class="fa fa-facebook"></i><span class="textspan">Facebook</span></button>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <button class="btn btn-primary social-login-btn social-google" type="subtmit" onclick="" value="Google login" id="googlelogin" class="login"><i class="fa fa-google-plus"></i><span class="textspan">Google</span></button>
+                    </div>
+                </div>
+            </div>
             <br><br>
 
 
             <small class="text-muted">Connexion sur le site</small>
             <br><br>
-            <form:form action="/login" method="post" modelAttribute="loginForm">
+            <div class="row">
+                <div class="column">
+                    <div class="col-md-offset-3 col-md-6">
+                        <form:form action="/login" method="post" modelAttribute="loginForm">
 
-                <form:input id="ember360" class="ember-view ember-text-field form-control login-input" placeholder="Email" path="username" type="text"/>
-                <form:input id="ember361" class="ember-view ember-text-field form-control login-input-pass" placeholder="Mot de passe" path="password" type="password"/>
+                            <form:input id="ember360" class="ember-view ember-text-field form-control login-input" placeholder="Email" path="username" type="text"/>
+                            <form:input id="ember361" class="ember-view ember-text-field form-control login-input-pass" placeholder="Mot de passe" path="password" type="password"/>
 
-                <script id="metamorph-22-start" type="text/x-placeholder"></script><script id="metamorph-22-end" type="text/x-placeholder"></script>
+                            <script id="metamorph-22-start" type="text/x-placeholder"></script><script id="metamorph-22-end" type="text/x-placeholder"></script>
 
-                <button class="btn btn-lg btn-primary btn-block" type="submit" value="login" data-bindattr-3="3">Se connecter</button>
-            </form:form>
-            <br>
-            <small class="create-account text-muted">Vous n'avez pas de compte chez nous ni de fb / google
-                <a href="<spring:url value='/user/add'/>"> Inscrivez-vous ! </a> </small>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit" value="login" data-bindattr-3="3">Se connecter</button>
+                        </form:form>
+                        <br>
+                        <small class="create-account text-muted">Vous n'avez pas de compte chez nous ni de fb / google
+                        <a href="<spring:url value='/user/add'/>"> Inscrivez-vous ! </a> </small>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

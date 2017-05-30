@@ -1836,6 +1836,7 @@ button.close {
   }
 }
 .navbar {
+  background: #fff;
   border-bottom: 1px solid #eee;
 }
 .text-primary,
@@ -2459,7 +2460,9 @@ table.tablesorter thead tr th:hover {
 #meteoDiv{
   padding: 10px;
 }
-
+#meteoDiv .titlearea span {
+  color: #fff;
+}
 #zone_meteo {
   margin: 5px;
 }
@@ -2472,6 +2475,7 @@ table.tablesorter thead tr th:hover {
 }
 #humidite, #vent{
   font-size: 16px;
+  color: #fff;
 }
 
 .newsDiv {
