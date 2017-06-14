@@ -31,31 +31,31 @@
 
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#" title="Bleu"><img src="/resources/img/profil/miniatures/001-man-4.png"></a>
+                                <a href="#" title="Bleu"><img src="/resources/img/profil/001-man-4.png"></a>
                             </li>
                             <li>
-                                <a href="#" title="Rouge"><img src="/resources/img/profil/miniatures/002-man-3.png"></a>
+                                <a href="#" title="Rouge"><img src="/resources/img/profil/002-man-3.png"></a>
                             </li>
                             <li>
-                                <a href="#" title="Jaune"><img src="/resources/img/profil/miniatures/003-man-2.png"></a>
+                                <a href="#" title="Jaune"><img src="/resources/img/profil/003-man-2.png"></a>
                             </li>
                             <li>
-                                <a href="#" title="Vert"><img src="/resources/img/profil/miniatures/004-girl-1.png"></a>
+                                <a href="#" title="Vert"><img src="/resources/img/profil/004-girl-1.png"></a>
                             </li>
                             <li>
-                                <a href="#" title="Rouge"><img src="/resources/img/profil/miniatures/005-man-1.png"></a>
+                                <a href="#" title="Rouge"><img src="/resources/img/profil/005-man-1.png"></a>
                             </li>
                             <li>
-                                <a href="#" title="Jaune"><img src="/resources/img/profil/miniatures/006-man.png"></a>
+                                <a href="#" title="Jaune"><img src="/resources/img/profil/006-man.png"></a>
                             </li>
                             <li>
-                                <a href="#" title="Vert"><img src="/resources/img/profil/miniatures/007-boy-1.png"></a>
+                                <a href="#" title="Vert"><img src="/resources/img/profil/007-boy-1.png"></a>
                             </li>
                             <li>
-                                <a href="#" title="Jaune"><img src="/resources/img/profil/miniatures/008-boy.png"></a>
+                                <a href="#" title="Jaune"><img src="/resources/img/profil/008-boy.png"></a>
                             </li>
                             <li>
-                                <a href="#" title="Vert"><img src="/resources/img/profil/miniatures/009-girl.png"></a>
+                                <a href="#" title="Vert"><img src="/resources/img/profil/009-girl.png"></a>
                             </li>
                         </ul>
                     </div>
@@ -167,3 +167,8 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $('.btn-group .dropdown-menu li').click(function(){
+        $(this).parents('.btn-group').find('button img').attr("src",$(this).find('a img').attr("src"));
+    });
+</script>

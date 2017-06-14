@@ -31,7 +31,7 @@
 .divInfo .firsteName {margin: 10px; }
 .divColor {padding: 6em 0; }
 .divColor .btn-group .btn.btn-default.dropdown-toggle{padding: 5px 20px; border-width: 0px; box-shadow: none;width: 115px;    height: 40px;background: transparent;} 
-.divColor .btn-group .btn.btn-default.dropdown-toggle img{display: block; width: 32px; margin: 0;}
+.divColor .btn-group .btn.btn-default.dropdown-toggle img{display: block; width: 32px;height: 32px; margin: 0;}
 .divColor .btn-group .dropdown-toggle .glyphicon { position: relative; top: -25px; left: 15px;}
 .divColor .btn-group .dropdown-menu li img {width: 32px; height: 32px;}
 .open>.dropdown-toggle.btn-default:focus, 
