@@ -3,8 +3,7 @@ LABEL MAINTAINER "clement@le-corre.eu"
 
 COPY . /usr/src/dashboard
 WORKDIR /usr/src/dashboard
-ENTRYPOINT ["mvn"]
-CMD ["compile","war:war"]
+RUN mvn compile war:war
 
 FROM tomcat:8-alpine
 LABEL MAINTAINER "clement@le-corre.eu"
