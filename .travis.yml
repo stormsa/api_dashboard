@@ -5,6 +5,10 @@ env:
   DOCKER_COMPOSE_VERSION: 1.9.0
 
 before_install:
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y install docker-ce
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
@@ -14,23 +18,18 @@ services:
   - docker
 
 script:
-    - docker build --no-cache -f appbuilder.Dockerfile -t dashme-builder .
-    - docker run --rm dashme-builder  
+    - docker build --no-cache -t dashme .
 
 after_success:
    - >-
      if [ "$TRAVIS_BRANCH" == "master" ]; then
      docker login -u="$DOCKER_USER" -p="$DOCKER_PWD" $DOCKER_REGISTRY;
-     docker build --no-cache -f appbuilder.Dockerfile -t dashme-builder .;
-     docker run --rm -v ${PWD}/target:/usr/src/dashboard/target/ dashme-builder;
      docker build --no-cache -t ${DOCKER_REGISTRY}/dashme .;
      docker push ${DOCKER_REGISTRY}/dashme;
      fi
    - >-
      if [ "$TRAVIS_BRANCH" == "develop" ]; then
      docker login -u="$DOCKER_USER" -p="$DOCKER_PWD" $DOCKER_REGISTRY;
-     docker build --no-cache -f appbuilder.Dockerfile -t dashme-builder .;
-     docker run --rm -v ${PWD}/target:/usr/src/dashboard/target/ dashme-builder;
      docker build --no-cache -t ${DOCKER_REGISTRY}/dashme:dev .;
      docker push ${DOCKER_REGISTRY}/dashme:dev;
      fi
